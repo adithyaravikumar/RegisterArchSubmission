@@ -79,5 +79,3 @@ class OrderSummaryRoute: Route {
 ```
 
 The `items` property is the input to that modal and the `didPay` publisher tells the billing page that the payment button was tapped. this helps the billing page to clear out the table view. And that's it.
-
-To see more use cases of this design and the full implementation of the routing system, you can check out [the repo](https://github.com/adithyaravikumar/RegisterArchSubmission).
