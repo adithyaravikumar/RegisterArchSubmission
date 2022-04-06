@@ -1,5 +1,5 @@
 import Combine
 
 class BillRoute: Route {
-    var selectedItem: AnyPublisher<MenuItem, Never>?
+    var selectedItem: Publishers.Share<AnyPublisher<MenuItem, Never>>?
 }

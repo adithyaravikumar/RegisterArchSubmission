@@ -4,7 +4,7 @@ class BillViewModel {
     @Published var billItems: [BillItem] = []
     private var cancellables: [AnyCancellable] = []
 
-    init(itemPublisher: AnyPublisher<MenuItem, Never>?) {
+    init(itemPublisher: Publishers.Share<AnyPublisher<MenuItem, Never>>?) {
         itemPublisher?.sink(receiveValue: { [weak self] item in
             self?.save(item)
         }).store(in: &cancellables)

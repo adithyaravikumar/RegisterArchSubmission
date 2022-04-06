@@ -5,8 +5,8 @@ class MenuViewModel {
     private let itemService: ItemService
     private let selectedItemSubject = PassthroughSubject<MenuItem, Never>()
 
-    var selectedItemPublisher: AnyPublisher<MenuItem, Never> {
-        selectedItemSubject.eraseToAnyPublisher()
+    var selectedItemPublisher: Publishers.Share<AnyPublisher<MenuItem, Never>> {
+        selectedItemSubject.eraseToAnyPublisher().share()
     }
     
     var menuItems: [MenuItem] {
